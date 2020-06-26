@@ -1,0 +1,5 @@
+#!/bin/bash
+ocaml compiler.ml foo.scm > foo.s
+nasm -felf64 -o foo.o foo.s
+gcc -m64 -static -o foo foo.o
+./foo
